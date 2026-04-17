@@ -3,11 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job Filter Widget</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Job filter width</h1>
+
+   <!-- Header Section -->
+    <header class="header">
+        <h1>Job Board</h1>
+        <p>Find your next opportunity</p>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filters-section">
+
+        <div class="filter-box">
+            <label for="searchInput">Search by Title</label>
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="e.g. Frontend Developer"
+            >
+        </div>
+
+        <div class="filter-box">
+            <label for="locationSelect">Filter by Location</label>
+            <select id="locationSelect">
+                <option value="">All Locations</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Pune">Pune</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select>
+        </div>
+
+        <div class="filter-box">
+            <label for="salarySlider">
+                Max Salary: <span id="salaryValue">16</span> LPA
+            </label>
+            <input 
+                type="range" 
+                id="salarySlider" 
+                min="3" 
+                max="16" 
+                value="16" 
+                step="1"
+            >
+            <div class="range-labels">
+                <span>3 LPA</span>
+                <span>16 LPA</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Job Count Line -->
+    <p class="job-count">
+        Showing <span id="jobCount">10</span> jobs
+    </p>
+
+    <!-- Jobs Grid -->
+    <div class="jobs-grid" id="jobsGrid">
+    </div>
+
+   <!-- No Results Message -->
+    <div class="no-results hidden" id="noResults">
+        <p>No jobs found matching your filters.</p>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
